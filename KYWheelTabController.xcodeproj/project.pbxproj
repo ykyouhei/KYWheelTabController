@@ -8,12 +8,60 @@
 
 /* Begin PBXBuildFile section */
 		41149B971C78C8E000920C0D /* KYWheelTabController.h in Headers */ = {isa = PBXBuildFile; fileRef = 41149B961C78C8E000920C0D /* KYWheelTabController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41149BA31C78CA2500920C0D /* KYWheelTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41149BA21C78CA2500920C0D /* KYWheelTabController.swift */; };
+		41149BA61C78CA3100920C0D /* MenuLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41149BA41C78CA3100920C0D /* MenuLayer.swift */; };
+		41149BA71C78CA3100920C0D /* WheelMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41149BA51C78CA3100920C0D /* WheelMenuView.swift */; };
+		41149BAB1C78CA3D00920C0D /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41149BA81C78CA3D00920C0D /* Menu@2x.png */; };
+		41149BAC1C78CA3D00920C0D /* Menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41149BA91C78CA3D00920C0D /* Menu@3x.png */; };
+		41149BAD1C78CA3D00920C0D /* WheelMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41149BAA1C78CA3D00920C0D /* WheelMenuView.xib */; };
+		41149BB51C78CA6F00920C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41149BB41C78CA6F00920C0D /* AppDelegate.swift */; };
+		41149BBA1C78CA6F00920C0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41149BB81C78CA6F00920C0D /* Main.storyboard */; };
+		41149BBC1C78CA6F00920C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41149BBB1C78CA6F00920C0D /* Assets.xcassets */; };
+		41149BBF1C78CA6F00920C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41149BBD1C78CA6F00920C0D /* LaunchScreen.storyboard */; };
+		41149BC41C78CAEE00920C0D /* KYWheelTabController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41149B931C78C8E000920C0D /* KYWheelTabController.framework */; };
+		41149BC51C78CAEE00920C0D /* KYWheelTabController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41149B931C78C8E000920C0D /* KYWheelTabController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41149BC61C78CAEE00920C0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41149B8A1C78C8E000920C0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41149B921C78C8E000920C0D;
+			remoteInfo = KYWheelTabController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		41149BC81C78CAEF00920C0D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				41149BC51C78CAEE00920C0D /* KYWheelTabController.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		41149B931C78C8E000920C0D /* KYWheelTabController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KYWheelTabController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41149B961C78C8E000920C0D /* KYWheelTabController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYWheelTabController.h; sourceTree = "<group>"; };
 		41149B981C78C8E000920C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41149BA21C78CA2500920C0D /* KYWheelTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYWheelTabController.swift; sourceTree = "<group>"; };
+		41149BA41C78CA3100920C0D /* MenuLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuLayer.swift; sourceTree = "<group>"; };
+		41149BA51C78CA3100920C0D /* WheelMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelMenuView.swift; sourceTree = "<group>"; };
+		41149BA81C78CA3D00920C0D /* Menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Menu@2x.png"; path = "Resources/Menu@2x.png"; sourceTree = "<group>"; };
+		41149BA91C78CA3D00920C0D /* Menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Menu@3x.png"; path = "Resources/Menu@3x.png"; sourceTree = "<group>"; };
+		41149BAA1C78CA3D00920C0D /* WheelMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WheelMenuView.xib; path = Resources/WheelMenuView.xib; sourceTree = "<group>"; };
+		41149BB21C78CA6F00920C0D /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41149BB41C78CA6F00920C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		41149BB91C78CA6F00920C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		41149BBB1C78CA6F00920C0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41149BBE1C78CA6F00920C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		41149BC01C78CA6F00920C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +72,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		41149BAF1C78CA6F00920C0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41149BC41C78CAEE00920C0D /* KYWheelTabController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -31,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				41149B951C78C8E000920C0D /* KYWheelTabController */,
+				41149BB31C78CA6F00920C0D /* Example */,
 				41149B941C78C8E000920C0D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				41149B931C78C8E000920C0D /* KYWheelTabController.framework */,
+				41149BB21C78CA6F00920C0D /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,10 +104,60 @@
 		41149B951C78C8E000920C0D /* KYWheelTabController */ = {
 			isa = PBXGroup;
 			children = (
+				41149B9E1C78C9E500920C0D /* Classes */,
+				41149B9F1C78C9ED00920C0D /* Resources */,
 				41149B961C78C8E000920C0D /* KYWheelTabController.h */,
 				41149B981C78C8E000920C0D /* Info.plist */,
 			);
 			path = KYWheelTabController;
+			sourceTree = "<group>";
+		};
+		41149B9E1C78C9E500920C0D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				41149BA11C78CA0900920C0D /* ViewControllers */,
+				41149BA01C78CA0200920C0D /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		41149B9F1C78C9ED00920C0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				41149BA81C78CA3D00920C0D /* Menu@2x.png */,
+				41149BA91C78CA3D00920C0D /* Menu@3x.png */,
+				41149BAA1C78CA3D00920C0D /* WheelMenuView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		41149BA01C78CA0200920C0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				41149BA41C78CA3100920C0D /* MenuLayer.swift */,
+				41149BA51C78CA3100920C0D /* WheelMenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		41149BA11C78CA0900920C0D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				41149BA21C78CA2500920C0D /* KYWheelTabController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		41149BB31C78CA6F00920C0D /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				41149BB41C78CA6F00920C0D /* AppDelegate.swift */,
+				41149BB81C78CA6F00920C0D /* Main.storyboard */,
+				41149BBB1C78CA6F00920C0D /* Assets.xcassets */,
+				41149BBD1C78CA6F00920C0D /* LaunchScreen.storyboard */,
+				41149BC01C78CA6F00920C0D /* Info.plist */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,16 +192,39 @@
 			productReference = 41149B931C78C8E000920C0D /* KYWheelTabController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		41149BB11C78CA6F00920C0D /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41149BC11C78CA6F00920C0D /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				41149BAE1C78CA6F00920C0D /* Sources */,
+				41149BAF1C78CA6F00920C0D /* Frameworks */,
+				41149BB01C78CA6F00920C0D /* Resources */,
+				41149BC81C78CAEF00920C0D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41149BC71C78CAEE00920C0D /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = Example;
+			productReference = 41149BB21C78CA6F00920C0D /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		41149B8A1C78C8E000920C0D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = kyo__hei;
 				TargetAttributes = {
 					41149B921C78C8E000920C0D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					41149BB11C78CA6F00920C0D = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -104,6 +235,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 41149B891C78C8E000920C0D;
 			productRefGroup = 41149B941C78C8E000920C0D /* Products */;
@@ -111,6 +243,7 @@
 			projectRoot = "";
 			targets = (
 				41149B921C78C8E000920C0D /* KYWheelTabController */,
+				41149BB11C78CA6F00920C0D /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -120,6 +253,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41149BAC1C78CA3D00920C0D /* Menu@3x.png in Resources */,
+				41149BAB1C78CA3D00920C0D /* Menu@2x.png in Resources */,
+				41149BAD1C78CA3D00920C0D /* WheelMenuView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41149BB01C78CA6F00920C0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41149BBF1C78CA6F00920C0D /* LaunchScreen.storyboard in Resources */,
+				41149BBC1C78CA6F00920C0D /* Assets.xcassets in Resources */,
+				41149BBA1C78CA6F00920C0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,10 +276,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41149BA61C78CA3100920C0D /* MenuLayer.swift in Sources */,
+				41149BA71C78CA3100920C0D /* WheelMenuView.swift in Sources */,
+				41149BA31C78CA2500920C0D /* KYWheelTabController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41149BAE1C78CA6F00920C0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41149BB51C78CA6F00920C0D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41149BC71C78CAEE00920C0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41149B921C78C8E000920C0D /* KYWheelTabController */;
+			targetProxy = 41149BC61C78CAEE00920C0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		41149BB81C78CA6F00920C0D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41149BB91C78CA6F00920C0D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		41149BBD1C78CA6F00920C0D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41149BBE1C78CA6F00920C0D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		41149B991C78C8E000920C0D /* Debug */ = {
@@ -173,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -215,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -228,6 +412,25 @@
 		41149B9C1C78C8E000920C0D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KYWheelTabController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.KYWheelTabController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		41149B9D1C78C8E000920C0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -239,21 +442,31 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		41149B9D1C78C8E000920C0D /* Release */ = {
+		41149BC21C78CA6F00920C0D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KYWheelTabController/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.KYWheelTabController";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		41149BC31C78CA6F00920C0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -274,6 +487,14 @@
 			buildConfigurations = (
 				41149B9C1C78C8E000920C0D /* Debug */,
 				41149B9D1C78C8E000920C0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		41149BC11C78CA6F00920C0D /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41149BC21C78CA6F00920C0D /* Debug */,
+				41149BC31C78CA6F00920C0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

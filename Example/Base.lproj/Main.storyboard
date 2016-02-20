@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R4q-fc-jd3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--User-->
+        <scene sceneID="CFp-FT-XMV">
+            <objects>
+                <viewController id="JeY-dW-gbN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oeJ-nM-Ox5"/>
+                        <viewControllerLayoutGuide type="bottom" id="LqY-Vh-kP6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cdu-Zr-Vn0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHk-oB-mUP">
+                                <rect key="frame" x="267" y="280" width="67" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JHk-oB-mUP" firstAttribute="centerX" secondItem="Cdu-Zr-Vn0" secondAttribute="centerX" id="atU-7g-HLz"/>
+                            <constraint firstItem="JHk-oB-mUP" firstAttribute="centerY" secondItem="Cdu-Zr-Vn0" secondAttribute="centerY" id="nVl-HH-XkJ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="User" image="icon_user" selectedImage="icon_user_on" id="jzg-Dz-E5J"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yyx-F6-LP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="-450"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="7tg-ap-ivE">
+            <objects>
+                <viewController id="vTX-eW-yar" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N5C-x9-COc"/>
+                        <viewControllerLayoutGuide type="bottom" id="etS-FH-KIn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qyu-PF-I7N">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-n0-pP2">
+                                <rect key="frame" x="251" y="280" width="99" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Ua-n0-pP2" firstAttribute="centerY" secondItem="Qyu-PF-I7N" secondAttribute="centerY" id="8ue-Vz-f2m"/>
+                            <constraint firstItem="9Ua-n0-pP2" firstAttribute="centerX" secondItem="Qyu-PF-I7N" secondAttribute="centerX" id="wpk-AQ-y86"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="icon_search" selectedImage="icon_search_on" id="mYG-Ae-vLc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XzI-Lz-aDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1091" y="-450"/>
+        </scene>
+        <!--Follow-->
+        <scene sceneID="ABb-1k-Zfa">
+            <objects>
+                <viewController id="Hsa-J6-E9r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Suh-hx-wj7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Agn-pY-6TB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fVV-fT-o9F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb7-yF-aJS">
+                                <rect key="frame" x="254" y="280" width="92" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nb7-yF-aJS" firstAttribute="centerX" secondItem="fVV-fT-o9F" secondAttribute="centerX" id="4jV-RG-qZm"/>
+                            <constraint firstItem="nb7-yF-aJS" firstAttribute="centerY" secondItem="fVV-fT-o9F" secondAttribute="centerY" id="CRs-Yt-WKl"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Follow" image="icon_follow" selectedImage="icon_follow_on" id="e2S-cq-QT0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5De-FP-DnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767" y="-450"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="bWk-cp-etS">
+            <objects>
+                <viewController id="ivV-G1-xVa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WWO-8A-DCl"/>
+                        <viewControllerLayoutGuide type="bottom" id="PR6-Tq-BJf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UnA-g2-Tp4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlW-o5-AiT">
+                                <rect key="frame" x="258" y="280" width="85" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GlW-o5-AiT" firstAttribute="centerY" secondItem="UnA-g2-Tp4" secondAttribute="centerY" id="Dlq-d7-5tX"/>
+                            <constraint firstItem="GlW-o5-AiT" firstAttribute="centerX" secondItem="UnA-g2-Tp4" secondAttribute="centerX" id="Xf9-ng-zr3"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="icon_home" selectedImage="icon_home_on" id="vhJ-tX-3ic"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJB-QJ-rf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-297" y="-450"/>
+        </scene>
+        <!--Circle Tab Controller-->
+        <scene sceneID="Tu6-2z-CGA">
+            <objects>
+                <tabBarController id="R4q-fc-jd3" customClass="KYCircleTabController" customModule="KYWheelTabController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Lk0-09-jz8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" red="0.63529411759999999" green="0.58823529409999997" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="ivV-G1-xVa" kind="relationship" relationship="viewControllers" id="Llg-FM-1Cs"/>
+                        <segue destination="JeY-dW-gbN" kind="relationship" relationship="viewControllers" id="ORf-b4-ueS"/>
+                        <segue destination="vTX-eW-yar" kind="relationship" relationship="viewControllers" id="Pic-cn-kEq"/>
+                        <segue destination="Hsa-J6-E9r" kind="relationship" relationship="viewControllers" id="4PI-ar-CwL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WFr-JA-U4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="735" y="-1430"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_follow" width="24" height="22"/>
+        <image name="icon_follow_on" width="24" height="22"/>
+        <image name="icon_home" width="24" height="21"/>
+        <image name="icon_home_on" width="24" height="21"/>
+        <image name="icon_search" width="21" height="20"/>
+        <image name="icon_search_on" width="21" height="20"/>
+        <image name="icon_user" width="20" height="22"/>
+        <image name="icon_user_on" width="20" height="22"/>
+    </resources>
+</document>
