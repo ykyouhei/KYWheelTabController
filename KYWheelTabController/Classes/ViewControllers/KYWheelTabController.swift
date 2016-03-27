@@ -1,5 +1,5 @@
 //
-//  KYCircleTabController.swift
+//  KYWheelTabController.swift
 //  KYWheelTabController
 //
 //  Created by kyo__hei on 2016/02/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class KYCircleTabController: UITabBarController {
+public class KYWheelTabController: UITabBarController {
     
     /* ====================================================================== */
     // MARK: Properties
@@ -87,7 +87,7 @@ public class KYCircleTabController: UITabBarController {
 
 }
 
-extension KYCircleTabController: WheelMenuViewDelegate {
+extension KYWheelTabController: WheelMenuViewDelegate {
     
     public func wheelMenuView(view: WheelMenuView, didSelectItem: UITabBarItem) {
         selectedIndex = view.selectedIndex
