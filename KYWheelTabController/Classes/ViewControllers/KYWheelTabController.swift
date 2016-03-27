@@ -14,7 +14,7 @@ public class KYWheelTabController: UITabBarController {
     // MARK: Properties
     /* ====================================================================== */
     
-    @IBInspectable var tintColor: UIColor = UIColor(colorLiteralRed: 0, green: 122/255, blue: 1, alpha: 1) {
+    @IBInspectable public var tintColor: UIColor = UIColor(colorLiteralRed: 0, green: 122/255, blue: 1, alpha: 1) {
         didSet {
             wheelMenuView.tintColor = tintColor
         }
