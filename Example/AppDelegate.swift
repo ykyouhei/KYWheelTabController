@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KYWheelTabController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let v = KYWheelTabController()
+        
+        let vc = UIViewController()
+        vc.tabBarItem = UITabBarItem(title: "", image: nil, tag: 1)
+        
+        v.viewControllers = [vc]
+        
+        window?.rootViewController = v
+        
         return true
     }
 

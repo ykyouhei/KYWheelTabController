@@ -20,6 +20,12 @@ public class KYWheelTabController: UITabBarController {
         }
     }
     
+    override public var viewControllers: [UIViewController]? {
+        didSet {
+            wheelMenuView.tabBarItems = tabBarItems
+        }
+    }
+    
     private(set) lazy var wheelMenuView: WheelMenuView = {
         return WheelMenuView(
             frame: CGRect(origin: CGPointZero, size: CGSize(width: 201, height: 201)),
