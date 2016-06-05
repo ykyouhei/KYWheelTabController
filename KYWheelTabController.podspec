@@ -8,7 +8,8 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://twitter.com/kyo__hei"
   s.platform     = :ios
   s.source       = { :git => "https://github.com/ykyouhei/KYWheelTabController.git", :tag => s.version.to_s }
-  s.source_files = "KYWheelTabController/*.swift"
+  s.source_files = "KYWheelTabController/Classes/*.swift"
+  s.resources    = "KYWheelTabController/Resources/*"
   s.requires_arc = true
   s.ios.deployment_target = '8.0'
 end
