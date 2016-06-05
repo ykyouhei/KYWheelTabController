@@ -26,7 +26,7 @@ public class KYWheelTabController: UITabBarController {
         }
     }
     
-    private(set) lazy var wheelMenuView: WheelMenuView = {
+    public internal(set) lazy var wheelMenuView: WheelMenuView = {
         return WheelMenuView(
             frame: CGRect(origin: CGPointZero, size: CGSize(width: 201, height: 201)),
             tabBarItems: self.tabBarItems)

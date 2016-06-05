@@ -20,6 +20,7 @@
 		41149BBF1C78CA6F00920C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41149BBD1C78CA6F00920C0D /* LaunchScreen.storyboard */; };
 		41149BC41C78CAEE00920C0D /* KYWheelTabController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41149B931C78C8E000920C0D /* KYWheelTabController.framework */; };
 		41149BC51C78CAEE00920C0D /* KYWheelTabController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41149B931C78C8E000920C0D /* KYWheelTabController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41B608751D042A910040D4F5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B608741D042A910040D4F5 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		41149BBB1C78CA6F00920C0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41149BBE1C78CA6F00920C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41149BC01C78CA6F00920C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41B608741D042A910040D4F5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				41149BBB1C78CA6F00920C0D /* Assets.xcassets */,
 				41149BBD1C78CA6F00920C0D /* LaunchScreen.storyboard */,
 				41149BC01C78CA6F00920C0D /* Info.plist */,
+				41B608741D042A910040D4F5 /* Storyboard.storyboard */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41149BBF1C78CA6F00920C0D /* LaunchScreen.storyboard in Resources */,
+				41B608751D042A910040D4F5 /* Storyboard.storyboard in Resources */,
 				41149BBC1C78CA6F00920C0D /* Assets.xcassets in Resources */,
 				41149BBA1C78CA6F00920C0D /* Main.storyboard in Resources */,
 			);
@@ -489,6 +493,7 @@
 				41149B9D1C78C8E000920C0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41149BC11C78CA6F00920C0D /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +502,7 @@
 				41149BC31C78CA6F00920C0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
