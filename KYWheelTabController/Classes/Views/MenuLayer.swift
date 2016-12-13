@@ -28,11 +28,11 @@ internal class MenuLayer: CAShapeLayer {
         }
     }
     
-    private let disableColor = UIColor(white: 0.4, alpha: 1)
+    fileprivate let disableColor = UIColor(white: 0.4, alpha: 1)
     
-    private let contentsLayer: CALayer
+    fileprivate let contentsLayer: CALayer
     
-    private let arcLayer: CAShapeLayer
+    fileprivate let arcLayer: CAShapeLayer
     
     
     /* ====================================================================== */
@@ -49,20 +49,20 @@ internal class MenuLayer: CAShapeLayer {
     {
         self.tabBarItem = tabBarItem
         
-        let scale    = UIScreen.mainScreen().scale
+        let scale    = UIScreen.main.scale
         let arcWidth = CGFloat(5)
         
         let bezierPath = UIBezierPath()
-        bezierPath.addArcWithCenter(center,
+        bezierPath.addArc(withCenter: center,
             radius: bounds.width/2 - arcWidth/2,
             startAngle: startAngle-0.01,
             endAngle: endAngle+0.01,
             clockwise: true)
         
         arcLayer             = CAShapeLayer()
-        arcLayer.path        = bezierPath.CGPath
+        arcLayer.path        = bezierPath.cgPath
         arcLayer.lineWidth   = arcWidth
-        arcLayer.fillColor   = UIColor.clearColor().CGColor
+        arcLayer.fillColor   = UIColor.clear.cgColor
         
         contentsLayer                    = CALayer()
         contentsLayer.frame              = bounds
@@ -75,14 +75,14 @@ internal class MenuLayer: CAShapeLayer {
         super.init()
         
         let path = UIBezierPath()
-        path.addArcWithCenter(center,
+        path.addArc(withCenter: center,
             radius: bounds.width/2,
             startAngle: startAngle,
             endAngle: endAngle,
             clockwise: true)
-        path.addLineToPoint(center)
+        path.addLine(to: center)
         
-        self.path          = path.CGPath
+        self.path          = path.cgPath
         lineWidth          = 1
         rasterizationScale = scale
         shouldRasterize    = true
@@ -98,13 +98,13 @@ internal class MenuLayer: CAShapeLayer {
     }
     
     
-    private func updateContents() {
+    fileprivate func updateContents() {
         if selected {
-            contentsLayer.contents = tabBarItem.selectedImage?.CGImage
-            arcLayer.strokeColor = tintColor.CGColor
+            contentsLayer.contents = tabBarItem.selectedImage?.cgImage
+            arcLayer.strokeColor = tintColor.cgColor
         } else {
-            contentsLayer.contents = tabBarItem.image?.CGImage
-            arcLayer.strokeColor = UIColor.clearColor().CGColor
+            contentsLayer.contents = tabBarItem.image?.cgImage
+            arcLayer.strokeColor = UIColor.clear.cgColor
         }
     }
 
