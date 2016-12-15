@@ -35,7 +35,7 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         }
     }
     
-    @IBInspectable var boarderColor: UIColor = UIColor(white: 0.4, alpha: 1) {
+    @IBInspectable public var boarderColor: UIColor = UIColor(white: 0.4, alpha: 1) {
         didSet {
             menuLayers.forEach {
                 $0.strokeColor = boarderColor.cgColor
@@ -95,7 +95,6 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
     
     fileprivate(set) var selectedIndex = 0
     
-    
     fileprivate var startPoint = CGPoint.zero
     
     fileprivate var currentAngle: CGFloat {
@@ -110,10 +109,12 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
     // MARK: IBOutlet
     /* ====================================================================== */
     
-    @IBOutlet fileprivate weak var centerButton: UIButton! {
+    public var centerButtonCustomImage: UIImage?
+    
+    @IBOutlet public weak var centerButton: UIButton! {
         didSet {
             let bundle = Bundle(for: type(of: self))
-            let image  = UIImage(named: "Menu", in: bundle, compatibleWith: nil)!
+            let image  = centerButtonCustomImage ?? UIImage(named: "Menu", in: bundle, compatibleWith: nil)!
                 .withRenderingMode(.alwaysTemplate)
             centerButton.setImage(image, for: UIControlState())
             centerButton.layer.shadowOpacity = 0.3
@@ -282,7 +283,7 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         centerButton.layer.cornerRadius = centerButtonRadius
     }
     
-    fileprivate func openMenuView() {
+    public func openMenuView() {
         openMenu = true
         UIView.animate(withDuration: TimeInterval(animationDuration),
             delay: 0,
@@ -296,7 +297,7 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         )
     }
     
-    fileprivate func closeMenuView() {
+    public func closeMenuView() {
         openMenu = false
         UIView.animate(withDuration: TimeInterval(animationDuration),
             delay: 0,
