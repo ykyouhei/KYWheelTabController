@@ -109,7 +109,11 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
     // MARK: IBOutlet
     /* ====================================================================== */
     
-    public var centerButtonCustomImage: UIImage?
+    public var centerButtonCustomImage: UIImage? {
+        didSet {
+            updateCenterButton()
+        }
+    }
     
     @IBOutlet public weak var centerButton: UIButton! {
         didSet {
@@ -140,15 +144,15 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        comminInit()
+        commonInit()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        comminInit()
+        commonInit()
     }
     
-    fileprivate func comminInit() {
+    fileprivate func commonInit() {
         let bundle         = Bundle(for: type(of: self))
         let nib            = UINib(nibName: "WheelMenuView", bundle: bundle)
         let view           = nib.instantiate(withOwner: self, options: nil).first as! UIView
@@ -235,15 +239,19 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         }
     }
     
+    public var customActionCallback: (() -> Void)? = nil
     
     @IBAction func didTapCenterButton(_: UIButton) {
-        if openMenu {
-            closeMenuView()
+        if let customActionCallback = customActionCallback {
+            customActionCallback()
         } else {
-            openMenuView()
+            if openMenu {
+                closeMenuView()
+            } else {
+                openMenuView()
+            }
         }
     }
-    
     
     /* ====================================================================== */
     // MARK: Public Method
@@ -278,9 +286,13 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
     // MARK: Private Method
     /* ====================================================================== */
     
-    fileprivate func updateCenterButton() {
+    public func updateCenterButton() {
         centerButtonWidth.constant      = centerButtonRadius * 2
         centerButton.layer.cornerRadius = centerButtonRadius
+        let bundle = Bundle(for: type(of: self))
+        let image  = centerButtonCustomImage ?? UIImage(named: "Menu", in: bundle, compatibleWith: nil)!
+            .withRenderingMode(.alwaysTemplate)
+        centerButton.setImage(image, for: UIControlState())
     }
     
     public func openMenuView() {
