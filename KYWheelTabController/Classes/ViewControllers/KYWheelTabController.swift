@@ -8,31 +8,31 @@
 
 import UIKit
 
-public class KYWheelTabController: UITabBarController {
+open class KYWheelTabController: UITabBarController {
     
     /* ====================================================================== */
     // MARK: Properties
     /* ====================================================================== */
     
-    @IBInspectable public var tintColor: UIColor = UIColor(colorLiteralRed: 0, green: 122/255, blue: 1, alpha: 1) {
+    @IBInspectable open var tintColor: UIColor = UIColor(colorLiteralRed: 0, green: 122/255, blue: 1, alpha: 1) {
         didSet {
             wheelMenuView.tintColor = tintColor
         }
     }
     
-    override public var viewControllers: [UIViewController]? {
+    override open var viewControllers: [UIViewController]? {
         didSet {
             wheelMenuView.tabBarItems = tabBarItems
         }
     }
     
-    public internal(set) lazy var wheelMenuView: WheelMenuView = {
+    open internal(set) lazy var wheelMenuView: WheelMenuView = {
         return WheelMenuView(
-            frame: CGRect(origin: CGPointZero, size: CGSize(width: 201, height: 201)),
+            frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 201, height: 201)),
             tabBarItems: self.tabBarItems)
     }()
     
-    private var tabBarItems: [UITabBarItem] {
+    fileprivate var tabBarItems: [UITabBarItem] {
         return viewControllers?.map { $0.tabBarItem } ?? []
     }
     
@@ -41,10 +41,10 @@ public class KYWheelTabController: UITabBarController {
     // MARK:  Life Cycle
     /* ====================================================================== */
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.hidden = true
+        tabBar.isHidden = true
         
         wheelMenuView.tintColor = tintColor
         wheelMenuView.delegate = self
@@ -54,37 +54,37 @@ public class KYWheelTabController: UITabBarController {
         view.addConstraints([
             NSLayoutConstraint(
                 item: wheelMenuView,
-                attribute: .Width,
-                relatedBy: .Equal,
+                attribute: .width,
+                relatedBy: .equal,
                 toItem: nil,
-                attribute: .Width,
+                attribute: .width,
                 multiplier: 1.0,
                 constant: 201
             ),
             NSLayoutConstraint(
                 item: wheelMenuView,
-                attribute: .Height,
-                relatedBy: .Equal,
+                attribute: .height,
+                relatedBy: .equal,
                 toItem: nil,
-                attribute: .Height,
+                attribute: .height,
                 multiplier: 1.0,
                 constant: 201
             ),
             NSLayoutConstraint(
                 item: wheelMenuView,
-                attribute: .CenterX,
-                relatedBy: .Equal,
+                attribute: .centerX,
+                relatedBy: .equal,
                 toItem: view,
-                attribute: .CenterX,
+                attribute: .centerX,
                 multiplier: 1.0,
                 constant: 0
             ),
             NSLayoutConstraint(
                 item: wheelMenuView,
-                attribute: .Bottom,
-                relatedBy: .Equal,
+                attribute: .bottom,
+                relatedBy: .equal,
                 toItem: view,
-                attribute: .Bottom,
+                attribute: .bottom,
                 multiplier: 1.0,
                 constant: 44
             )
@@ -95,7 +95,7 @@ public class KYWheelTabController: UITabBarController {
 
 extension KYWheelTabController: WheelMenuViewDelegate {
     
-    public func wheelMenuView(view: WheelMenuView, didSelectItem: UITabBarItem) {
+    public func wheelMenuView(_ view: WheelMenuView, didSelectItem: UITabBarItem) {
         selectedIndex = view.selectedIndex
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 public protocol WheelMenuViewDelegate: NSObjectProtocol {
     
-    func wheelMenuView(view: WheelMenuView, didSelectItem: UITabBarItem)
+    func wheelMenuView(_ view: WheelMenuView, didSelectItem: UITabBarItem)
     
 }
 
@@ -30,15 +30,15 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
     @IBInspectable public var menuBackGroundColor: UIColor = UIColor(white: 36/255, alpha: 1) {
         didSet {
             menuLayers.forEach {
-                $0.fillColor = menuBackGroundColor.CGColor
+                $0.fillColor = menuBackGroundColor.cgColor
             }
         }
     }
     
-    @IBInspectable var boarderColor: UIColor = UIColor(white: 0.4, alpha: 1) {
+    @IBInspectable public var boarderColor: UIColor = UIColor(white: 0.4, alpha: 1) {
         didSet {
             menuLayers.forEach {
-                $0.strokeColor = boarderColor.CGColor
+                $0.strokeColor = boarderColor.cgColor
             }
         }
     }
@@ -56,14 +56,14 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
             
             let angle = 2 * CGFloat(M_PI) / CGFloat(newValue.count)
             
-            menuLayers = newValue.enumerate().map {
-                let startAngle = CGFloat($0.index)*angle - angle/2 - CGFloat(M_PI_2)
-                let endAngle   = CGFloat($0.index+1)*angle - angle/2 - CGFloat(M_PI_2) - 0.005
+            menuLayers = newValue.enumerated().map {
+                let startAngle = CGFloat($0.offset) * angle - angle / 2 - CGFloat(M_PI_2)
+                let endAngle   = CGFloat($0.offset + 1)  * angle - angle / 2 - CGFloat(M_PI_2) - 0.005
                 let center     = CGPoint(
                     x: bounds.width/2,
                     y: bounds.height/2)
                 
-                var transform = CATransform3DMakeRotation(angle * CGFloat($0.index), 0, 0, 1)
+                var transform = CATransform3DMakeRotation(angle * CGFloat($0.offset), 0, 0, 1)
                 transform     = CATransform3DTranslate(
                     transform,
                     0,
@@ -80,9 +80,9 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
                     contentsTransform: transform)
                    
                 layer.tintColor   = tintColor
-                layer.strokeColor = boarderColor.CGColor
-                layer.fillColor   = menuBackGroundColor.CGColor
-                layer.selected    = $0.index == selectedIndex
+                layer.strokeColor = boarderColor.cgColor
+                layer.fillColor   = menuBackGroundColor.cgColor
+                layer.selected    = $0.offset == selectedIndex
                 
                 menuBaseView.layer.addSublayer(layer)
                 
@@ -91,40 +91,45 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         }
     }
     
-    private(set) var openMenu: Bool = true
+    fileprivate(set) var openMenu: Bool = true
     
-    private(set) var selectedIndex = 0
+    fileprivate(set) var selectedIndex = 0
     
+    fileprivate var startPoint = CGPoint.zero
     
-    private var startPoint = CGPointZero
-    
-    private var currentAngle: CGFloat {
+    fileprivate var currentAngle: CGFloat {
         let angle = 2 * CGFloat(M_PI) / CGFloat(menuLayers.count)
         return CGFloat(menuLayers.count - selectedIndex) * angle
     }
     
-    private var menuLayers = [MenuLayer]()
+    fileprivate var menuLayers = [MenuLayer]()
     
     
     /* ====================================================================== */
     // MARK: IBOutlet
     /* ====================================================================== */
     
-    @IBOutlet private weak var centerButton: UIButton! {
+    public var centerButtonCustomImage: UIImage? {
         didSet {
-            let bundle = NSBundle(forClass: self.dynamicType)
-            let image  = UIImage(named: "Menu", inBundle: bundle, compatibleWithTraitCollection: nil)!
-                .imageWithRenderingMode(.AlwaysTemplate)
-            centerButton.setImage(image, forState: .Normal)
-            centerButton.layer.shadowOpacity = 0.3
-            centerButton.layer.shadowRadius  = 10
-            centerButton.layer.shadowOffset  = CGSizeZero
+            updateCenterButton()
         }
     }
     
-    @IBOutlet private weak var centerButtonWidth: NSLayoutConstraint!
+    @IBOutlet public weak var centerButton: UIButton! {
+        didSet {
+            let bundle = Bundle(for: type(of: self))
+            let image  = centerButtonCustomImage ?? UIImage(named: "Menu", in: bundle, compatibleWith: nil)!
+                .withRenderingMode(.alwaysTemplate)
+            centerButton.setImage(image, for: UIControlState())
+            centerButton.layer.shadowOpacity = 0.3
+            centerButton.layer.shadowRadius  = 10
+            centerButton.layer.shadowOffset  = CGSize.zero
+        }
+    }
     
-    @IBOutlet private weak var menuBaseView: UIView!
+    @IBOutlet fileprivate weak var centerButtonWidth: NSLayoutConstraint!
+    
+    @IBOutlet fileprivate weak var menuBaseView: UIView!
     
 
     
@@ -139,28 +144,28 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        comminInit()
+        commonInit()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        comminInit()
+        commonInit()
     }
     
-    private func comminInit() {
-        let bundle         = NSBundle(forClass: self.dynamicType)
+    fileprivate func commonInit() {
+        let bundle         = Bundle(for: type(of: self))
         let nib            = UINib(nibName: "WheelMenuView", bundle: bundle)
-        let view           = nib.instantiateWithOwner(self, options: nil).first as! UIView
+        let view           = nib.instantiate(withOwner: self, options: nil).first as! UIView
         let viewDictionary = ["view": view]
         
         addSubview(view)
         
         view.translatesAutoresizingMaskIntoConstraints = false
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[view]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]-0-|",
             options:NSLayoutFormatOptions(rawValue: 0),
             metrics:nil,
             views: viewDictionary))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[view]-0-|",
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|",
             options:NSLayoutFormatOptions(rawValue: 0),
             metrics:nil,
             views: viewDictionary))
@@ -172,10 +177,10 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         super.prepareForInterfaceBuilder()
         
         tabBarItems = [
-            UITabBarItem(tabBarSystemItem: .Bookmarks, tag: 1),
-            UITabBarItem(tabBarSystemItem: .Bookmarks, tag: 2),
-            UITabBarItem(tabBarSystemItem: .Bookmarks, tag: 3),
-            UITabBarItem(tabBarSystemItem: .Bookmarks, tag: 4)
+            UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1),
+            UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2),
+            UITabBarItem(tabBarSystemItem: .bookmarks, tag: 3),
+            UITabBarItem(tabBarSystemItem: .bookmarks, tag: 4)
         ]
     }
     
@@ -184,14 +189,14 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
     // MARK: Actions
     /* ====================================================================== */
     
-    @IBAction private func handlePanGesture(sender: UIPanGestureRecognizer) {
-        let location = sender.locationInView(self)
+    @IBAction fileprivate func handlePanGesture(_ sender: UIPanGestureRecognizer) {
+        let location = sender.location(in: self)
         
         switch sender.state {
-        case .Began:
+        case .began:
             startPoint = location
             
-        case .Changed:
+        case .changed:
             let radian1 = -atan2(
                 startPoint.x - menuBaseView.center.x,
                 startPoint.y - menuBaseView.center.y)
@@ -199,9 +204,7 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
                 location.x - menuBaseView.center.x,
                 location.y - menuBaseView.center.y)
             
-            menuBaseView.transform = CGAffineTransformRotate(
-                menuBaseView.transform,
-                radian2 - radian1)
+            menuBaseView.transform = menuBaseView.transform.rotated(by: radian2 - radian1)
             
             startPoint = location
             
@@ -223,16 +226,11 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         }
     }
     
-    @IBAction private func handleTapGesture(sender: UITapGestureRecognizer) {
-        let location = sender.locationInView(menuBaseView)
+    @IBAction fileprivate func handleTapGesture(_ sender: UITapGestureRecognizer) {
+        let location = sender.location(in: menuBaseView)
         
-        for (idx, menuLayer) in menuLayers.enumerate() {
-            let touchInLayer =  CGPathContainsPoint(
-                menuLayer.path,
-                nil,
-                location,
-                true)
-           
+        for (idx, menuLayer) in menuLayers.enumerated() {
+            let touchInLayer = menuLayer.path?.contains(location) ?? false
             if touchInLayer {
                 setSelectedIndex(idx, animated: true)
                 delegate?.wheelMenuView(self, didSelectItem: tabBarItems[idx])
@@ -241,33 +239,37 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         }
     }
     
+    public var customActionCallback: (() -> Void)? = nil
     
     @IBAction func didTapCenterButton(_: UIButton) {
-        if openMenu {
-            closeMenuView()
+        if let customActionCallback = customActionCallback {
+            customActionCallback()
         } else {
-            openMenuView()
+            if openMenu {
+                closeMenuView()
+            } else {
+                openMenuView()
+            }
         }
     }
-    
     
     /* ====================================================================== */
     // MARK: Public Method
     /* ====================================================================== */
     
-    public func setSelectedIndex(index: Int, animated: Bool) {
+    public func setSelectedIndex(_ index: Int, animated: Bool) {
         selectedIndex = index
         
-        let duration  = animated ? NSTimeInterval(animationDuration) : 0
+        let duration  = animated ? TimeInterval(animationDuration) : 0
         
-        UIView.animateWithDuration(NSTimeInterval(duration),
+        UIView.animate(withDuration: TimeInterval(duration),
             animations: {
                 self.menuBaseView.transform =
-                    CGAffineTransformMakeRotation(self.currentAngle)
+                    CGAffineTransform(rotationAngle: self.currentAngle)
             },
             completion: { _ in
-                self.menuLayers.enumerate().forEach {
-                    $0.element.selected = $0.index == index
+                self.menuLayers.enumerated().forEach {
+                    $0.element.selected = $0.offset == index
                 }
             }
         )
@@ -284,38 +286,38 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
     // MARK: Private Method
     /* ====================================================================== */
     
-    private func updateCenterButton() {
+    public func updateCenterButton() {
         centerButtonWidth.constant      = centerButtonRadius * 2
         centerButton.layer.cornerRadius = centerButtonRadius
+        let bundle = Bundle(for: type(of: self))
+        let image  = centerButtonCustomImage ?? UIImage(named: "Menu", in: bundle, compatibleWith: nil)!
+            .withRenderingMode(.alwaysTemplate)
+        centerButton.setImage(image, for: UIControlState())
     }
     
-    private func openMenuView() {
+    public func openMenuView() {
         openMenu = true
-        UIView.animateWithDuration(NSTimeInterval(animationDuration),
+        UIView.animate(withDuration: TimeInterval(animationDuration),
             delay: 0,
             usingSpringWithDamping: 0.5,
             initialSpringVelocity: 5.0,
             options: [],
             animations: {
-                self.menuBaseView.transform = CGAffineTransformRotate(
-                    CGAffineTransformMakeScale(1, 1),
-                    self.currentAngle)
+                self.menuBaseView.transform = CGAffineTransform(scaleX: 1, y: 1).rotated(by: self.currentAngle)
             },
             completion: nil
         )
     }
     
-    private func closeMenuView() {
+    public func closeMenuView() {
         openMenu = false
-        UIView.animateWithDuration(NSTimeInterval(animationDuration),
+        UIView.animate(withDuration: TimeInterval(animationDuration),
             delay: 0,
             usingSpringWithDamping: 0.5,
             initialSpringVelocity: 5.0,
             options: [],
             animations: {
-                self.menuBaseView.transform = CGAffineTransformRotate(
-                    CGAffineTransformMakeScale(0.1, 0.1),
-                    self.currentAngle)
+                self.menuBaseView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1).rotated(by: self.currentAngle)
             },
             completion: nil
         )
