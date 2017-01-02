@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "KYWheelTabController"
-  s.version      = "1.0.0"
+  s.version      = "2.0.0"
   s.summary      = "KYWheelTabController is a subclass of UITabBarController.It displays the circular menu instead of UITabBar."
   s.homepage     = "https://github.com/ykyouhei/KYWheelTabController"
   s.license      = "MIT"
