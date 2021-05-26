@@ -15,8 +15,7 @@ internal class MenuLayer: CAShapeLayer {
     /* ===================================================================== */
     
     let tabBarItem: UITabBarItem
-    
-    var tintColor: UIColor = UIColor(colorLiteralRed: 0, green: 122/255, blue: 1, alpha: 1) {
+    var tintColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1) {
         didSet {
             updateContents()
         }
@@ -66,7 +65,7 @@ internal class MenuLayer: CAShapeLayer {
         
         contentsLayer                    = CALayer()
         contentsLayer.frame              = bounds
-        contentsLayer.contentsGravity    = kCAGravityCenter
+        contentsLayer.contentsGravity    = CALayerContentsGravity.center
         contentsLayer.contentsScale      = scale
         contentsLayer.transform          = contentsTransform
         contentsLayer.rasterizationScale = scale

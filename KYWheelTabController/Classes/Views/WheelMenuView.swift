@@ -120,7 +120,7 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
             let bundle = Bundle(for: type(of: self))
             let image  = centerButtonCustomImage ?? UIImage(named: "Menu", in: bundle, compatibleWith: nil)!
                 .withRenderingMode(.alwaysTemplate)
-            centerButton.setImage(image, for: UIControlState())
+            centerButton.setImage(image, for: UIControl.State())
             centerButton.layer.shadowOpacity = 0.3
             centerButton.layer.shadowRadius  = 10
             centerButton.layer.shadowOffset  = CGSize.zero
@@ -162,11 +162,11 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         
         view.translatesAutoresizingMaskIntoConstraints = false
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]-0-|",
-            options:NSLayoutFormatOptions(rawValue: 0),
+                                                      options:NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics:nil,
             views: viewDictionary))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|",
-            options:NSLayoutFormatOptions(rawValue: 0),
+                                                      options:NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics:nil,
             views: viewDictionary))
         
@@ -292,7 +292,7 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         let bundle = Bundle(for: type(of: self))
         let image  = centerButtonCustomImage ?? UIImage(named: "Menu", in: bundle, compatibleWith: nil)!
             .withRenderingMode(.alwaysTemplate)
-        centerButton.setImage(image, for: UIControlState())
+        centerButton.setImage(image, for: UIControl.State())
     }
     
     public func openMenuView() {
