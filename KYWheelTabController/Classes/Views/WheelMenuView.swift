@@ -54,16 +54,16 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
         } set {
             menuLayers.forEach{ $0.removeFromSuperlayer() }
             
-            let angle = 2 * CGFloat(M_PI) / CGFloat(newValue.count)
+            let angle = 2 * CGFloat(Double.pi) / CGFloat(newValue.count)
             
             menuLayers = newValue.enumerated().map {
-                let startAngle = CGFloat($0.offset) * angle - angle / 2 - CGFloat(M_PI_2)
-                let endAngle   = CGFloat($0.offset + 1)  * angle - angle / 2 - CGFloat(M_PI_2) - 0.005
+                let startAngle = CGFloat($0.offset) * angle - angle / 2 - CGFloat(Double.pi)
+                let endAngle   = CGFloat($0.offset + 1)  * angle - angle / 2 - CGFloat(Double.pi) - 0.005
                 let center     = CGPoint(
                     x: bounds.width/2,
                     y: bounds.height/2)
                 
-                var transform = CATransform3DMakeRotation(angle * CGFloat($0.offset), 0, 0, 1)
+                var transform = CATransform3DMakeRotation(CGFloat(angle) * CGFloat($0.offset), 0, 0, 1)
                 transform     = CATransform3DTranslate(
                     transform,
                     0,
@@ -98,7 +98,7 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
     fileprivate var startPoint = CGPoint.zero
     
     fileprivate var currentAngle: CGFloat {
-        let angle = 2 * CGFloat(M_PI) / CGFloat(menuLayers.count)
+        let angle = 2 * CGFloat(Double.pi) / CGFloat(menuLayers.count)
         return CGFloat(menuLayers.count - selectedIndex) * angle
     }
     
@@ -209,14 +209,14 @@ public protocol WheelMenuViewDelegate: NSObjectProtocol {
             startPoint = location
             
         default:
-            let angle         = 2 * CGFloat(M_PI) / CGFloat(menuLayers.count)
+            let angle         = 2 * CGFloat(Double.pi) / CGFloat(menuLayers.count)
             var menuViewAngle = atan2(menuBaseView.transform.b, menuBaseView.transform.a)
             
             if menuViewAngle < 0 {
-                menuViewAngle += CGFloat(2 * M_PI)
+                menuViewAngle += 2 * CGFloat(Double.pi)
             }
             
-            var index = menuLayers.count - Int((menuViewAngle + CGFloat(M_PI_4)) / angle)
+            var index = menuLayers.count - Int((menuViewAngle + CGFloat(Double.pi)/4) / angle)
             if index == menuLayers.count {
                 index = 0
             }
