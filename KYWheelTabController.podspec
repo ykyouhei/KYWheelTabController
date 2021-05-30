@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "Yaron Jackoby" => "yaronj3@gmail.com" }
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/yaron3/KYWheelTabController.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/yaron3/KYWheelTabController.git" }
   s.source_files = "KYWheelTabController/Classes/**/*.swift"
   s.resources    = "KYWheelTabController/Resources/*"
   s.requires_arc = true
