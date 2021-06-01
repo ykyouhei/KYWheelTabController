@@ -14,7 +14,7 @@ open class KYWheelTabController: UITabBarController {
     // MARK: Properties
     /* ====================================================================== */
     
-    @IBInspectable open var tintColor: UIColor = UIColor(colorLiteralRed: 0, green: 122/255, blue: 1, alpha: 1) {
+    @IBInspectable open var tintColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1) {
         didSet {
             wheelMenuView.tintColor = tintColor
         }
@@ -50,6 +50,8 @@ open class KYWheelTabController: UITabBarController {
         wheelMenuView.delegate = self
         wheelMenuView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(wheelMenuView)
+        let window = UIApplication.shared.windows[0]
+        let safeFrame = window.safeAreaLayoutGuide.layoutFrame
         
         view.addConstraints([
             NSLayoutConstraint(
@@ -86,7 +88,7 @@ open class KYWheelTabController: UITabBarController {
                 toItem: view,
                 attribute: .bottom,
                 multiplier: 1.0,
-                constant: 44
+                constant: 34 - safeFrame.minY
             )
         ])
     }
